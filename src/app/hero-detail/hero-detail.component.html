@@ -1,0 +1,11 @@
+<div *ngIf="hero">
+  <p>Nom du héro sélectionné : {{hero.name}}</p>
+  <p>Id du héro sélectionné : {{hero.id}}</p>
+  <p>Puissance du héro : {{hero.power}}</p>
+
+  <h3>Modification du héro sélectionné :</h3>
+  <label>
+    <input [(ngModel)]="hero.name" placeholder="Nom">
+    <input [(ngModel)]="hero.power" placeholder="Puissance">
+  </label>
+</div>
