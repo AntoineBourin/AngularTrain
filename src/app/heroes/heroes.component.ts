@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
-import { HEROES } from '../heroes-list';
+import { HeroService } from '../hero.service';
 import {HttpErrorResponse} from '@angular/common/http';
 
 @Component({
@@ -9,17 +9,16 @@ import {HttpErrorResponse} from '@angular/common/http';
   styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent implements OnInit {
-  heroes = HEROES;
+  heroes: Hero[];
   selectedHero: Hero;
 
-  constructor() {
-    console.log(this.heroes);
-  }
+  constructor(private heroService: HeroService) { }
   onHeroSelection(hero: Hero): void {
     this.selectedHero = hero;
   }
 
   ngOnInit() {
+    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
 
 }
