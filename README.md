@@ -1,3 +1,9 @@
+## Commands used in project 
+1. ng serve --open 
+2. ng generate service <nameOfService>
+3. ng generate component <nameOfComponent>
+
+
 # AngularTrainingApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
