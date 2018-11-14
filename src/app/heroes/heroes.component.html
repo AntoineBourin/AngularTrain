@@ -4,14 +4,4 @@
   <li *ngFor="let hero of heroes" (click)="onHeroSelection(hero)">{{hero.name}}</li>
 </ul>
 
-<div *ngIf="selectedHero">
-  <p>Nom du héro sélectionné : {{selectedHero.name}}</p>
-  <p>Id du héro sélectionné : {{selectedHero.id}}</p>
-  <p>Puissance du héro : {{selectedHero.power}}</p>
-
-  <h3>Modification du héro sélectionné :</h3>
-  <label>
-    <input [(ngModel)]="selectedHero.name" placeholder="Nom">
-    <input [(ngModel)]="selectedHero.power" placeholder="Puissance">
-  </label>
-</div>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
