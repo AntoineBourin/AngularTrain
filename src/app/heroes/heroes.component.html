@@ -1,7 +1,0 @@
-<p>Liste des héros:</p>
-<p>Cliquez sur l'un d'entre eux pour afficher ses détails</p>
-<ul>
-  <li *ngFor="let hero of heroes" (click)="onHeroSelection(hero)">{{hero.name}}</li>
-</ul>
-
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
