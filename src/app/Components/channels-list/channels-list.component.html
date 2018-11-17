@@ -1,0 +1,19 @@
+<div *ngIf="!fetchingChannels && channelsList.length > 0">
+  <div class="channel-list">
+    <div *ngFor="let channel of channelsList" class="channel">
+      <div class="head">
+        <img src="{{channel.snippet.thumbnails.default.url}}" alt="Logo de chaîne {{channel.snippet.title}}">
+        <p>@{{channel.snippet.title}}</p>
+      </div>
+      <div class="content">
+        <p>Créé le {{channel.snippet.publishedAt | date:'dd/MM/yyyy'}}</p>
+        <p>{{channel.snippet.description}}</p>
+        <p>{{channel.statistics.subscriberCount | number}} abonnés</p>
+        <p>{{channel.statistics.videoCount}} vidéos</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="!fetchingChannels && channelsList.length === 0">
+  <h2>Désolé, aucune chaîne correspondante à ce nom d'utilisateur n'a été trouvée.</h2>
+</div>
