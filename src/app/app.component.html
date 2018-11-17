@@ -2,5 +2,9 @@
 <div style="text-align:center">
   <img width="150" alt="Youtube Logo" src="https://www.freeiconspng.com/uploads/youtube-logo-png-photo-0.png">
   <h1>Bienvenue sur l'application d'exercice {{ title }}!</h1>
+  <input placeholder="Nom d'utilisateur youtube" [(ngModel)]="youtubeUsername">
+  <div class="youtube-channels-results" *ngIf="youtubeUsername">
+    <app-channels-list [search]="youtubeUsername"></app-channels-list>
+  </div>
 </div>
 <router-outlet></router-outlet>
