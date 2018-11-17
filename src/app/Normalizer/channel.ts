@@ -22,4 +22,5 @@ export class Channel {
     videoCount: string,
     commentsCount: string,
   };
+  id: string;
 }
