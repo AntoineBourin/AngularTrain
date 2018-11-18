@@ -21,7 +21,7 @@ export class ChannelsListComponent implements OnInit {
     this.fetchingChannels = true;
     this.channelsList = [];
     if (username) {
-      this.channels.getLastVideos(username, 3).subscribe(result => {
+      this.channels.getChannelForUsername(username, 3).subscribe(result => {
         result.items.forEach(item => {
           this.channelsList.push(item);
         });

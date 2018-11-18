@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ChannelsListComponent } from './Components/channels-list/channels-list.component';
 import { ChannelDetailsComponent } from './Components/channel-details/channel-details.component';
+import { PlaylistDetailsComponent } from './Components/playlist-details/playlist-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChannelsListComponent,
     ChannelDetailsComponent,
+    PlaylistDetailsComponent,
   ],
   imports: [
     BrowserModule,
