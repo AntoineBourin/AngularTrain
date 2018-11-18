@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
 export class YoutubeChannelService {
 
   constructor(private http: HttpClient) { }
-  public getLastVideos(username: string, maxResults: number): Observable<any> {
+  public getChannelForUsername(username: string, maxResults: number): Observable<any> {
     return this.http.get('https://www.googleapis.com/youtube/v3/channels',
       {
         params: {

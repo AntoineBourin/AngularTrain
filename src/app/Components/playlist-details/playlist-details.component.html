@@ -1,0 +1,20 @@
+<div id="playlist-details">
+  <label>
+    <input type="checkbox" [(ngModel)]="thumbnailPreference">
+    Afficher l'image de la vidéo uniquement
+  </label>
+  <div class="videos-list">
+    <div class="item" *ngFor="let video of videosList">
+      <iframe
+        *ngIf="!thumbnailPreference"
+        [src]="sanitizeSafeVideoId(video.contentDetails.videoId)"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <img src="{{video.snippet.thumbnails.medium.url}}" *ngIf="thumbnailPreference" width="300" height="150">
+      <p>Le {{video.snippet.publishedAt | date:'dd/MM/yyyy'}} - {{video.snippet.channelTitle}}</p>
+    </div>
+  </div>
+  <button *ngIf="pagination.getNextPageToken()" (click)="retrievePlaylistVideos()">Voir + de vidéos</button>
+</div>
