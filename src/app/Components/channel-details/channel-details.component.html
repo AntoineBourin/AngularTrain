@@ -1,3 +1,23 @@
-<p>
-  channel-details works!
-</p>
+<div *ngIf="!fetchingDetails && playlists.length" id="playlists">
+  <div class="playlists-items">
+    <div class="item" *ngFor="let playlist of playlists">
+      <div class="head">
+        <img
+          width="{{playlist.snippet.thumbnails.default.width}}"
+          height="{{playlist.snippet.thumbnails.default.height}}"
+          src="{{playlist.snippet.thumbnails.default.url}}"
+          alt="{{playlist.snippet.channelTitle}}"
+        >
+        <div>
+          <h2>{{playlist.snippet.localized.title}}</h2>
+          <p>{{playlist.snippet.publishedAt | date:'dd/MM/yyyy'}}</p>
+        </div>
+      </div>
+      <div class="content">
+        <p>{{playlist.snippet.localized.description}}</p>
+        <p>Contient {{playlist.contentDetails.itemCount}} vidéos</p>
+      </div>
+    </div>
+  </div>
+  <button *ngIf="nextPageToken" (click)="loadChannelData()">Voir + de playlists</button>
+</div>
