@@ -1,0 +1,43 @@
+#playlists {
+  .playlists-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+
+    .item {
+      border: 1px solid #ccc;
+      flex-basis: 30%;
+      margin: 10px;
+      padding: 10px;
+
+      .head {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+
+        div {
+          flex-basis: 45%;
+        }
+        h2 {
+          color: #FF0000;
+          font-size: 1rem;
+          font-weight: normal;
+          margin: 0 5px;
+        }
+      }
+      .content {
+        p {
+          text-align: center;
+          color: grey;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+  button {
+    display: block;
+    margin: 0 auto;
+  }
+}

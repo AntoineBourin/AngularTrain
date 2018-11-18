@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
 export class YoutubeChannelService {
 
   constructor(private http: HttpClient) { }
-  public getLastVideos(username: string, maxResults: number) {
+  public getLastVideos(username: string, maxResults: number): Observable<any> {
     return this.http.get('https://www.googleapis.com/youtube/v3/channels',
       {
         params: {
@@ -17,6 +17,18 @@ export class YoutubeChannelService {
           'forUsername': username,
           'part': 'snippet,contentDetails,statistics',
           'maxResults': maxResults.toString(),
+        }
+      });
+  }
+  public getPlaylistsForChannel(channelId: string, maxResults: number, pageToken: string): Observable<any> {
+    return this.http.get('https://www.googleapis.com/youtube/v3/playlists',
+      {
+        params: {
+          'key': apiKey,
+          'channelId': channelId,
+          'part': 'snippet,contentDetails',
+          'maxResults': maxResults.toString(),
+          'pageToken': pageToken,
         }
       });
   }

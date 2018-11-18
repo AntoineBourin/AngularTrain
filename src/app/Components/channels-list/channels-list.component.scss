@@ -5,6 +5,10 @@
   margin: 20px auto;
   flex-wrap: wrap;
 
+  a {
+    text-decoration: none;
+  }
+
   .channel {
     border: 1px solid #ccc;
     padding: 10px;
@@ -22,9 +26,22 @@
       p {
         margin-left: 10px;
         color: orangered;
+        text-underline: none;
       }
     }
     .content {
+      p {
+        color: black;
+      }
     }
   }
+}
+
+input {
+  margin: 0 auto;
+  display: block;
+}
+
+h2 {
+  text-align: center;
 }
