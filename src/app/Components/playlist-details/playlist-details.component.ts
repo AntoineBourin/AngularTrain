@@ -36,8 +36,5 @@ export class PlaylistDetailsComponent implements OnInit {
   protected sanitizeSafeVideoId(videoId: string): SafeResourceUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + videoId);
   }
-  public updateThumbnailPreference(event) {
-    console.log(event);
-  }
 
 }
